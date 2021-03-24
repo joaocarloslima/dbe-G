@@ -5,10 +5,13 @@ import java.math.BigDecimal;
 public class TestaSituacao {
 
 	public static void main(String[] args) {
-		Pedido pedido = new Pedido(new BigDecimal("100"));
-		pedido.handler.inscrever(new EmailListener());
-		pedido.handler.inscrever(new LogListener());
+		PedidoInterface pedido = 
+				new PedidoProxy( new Pedido(new BigDecimal("100")) );
+//		pedido.handler.inscrever(new EmailListener());
+//		pedido.handler.inscrever(new LogListener());
+		pedido.abrirChamado();
 		
+		System.out.println(pedido.getEndereco());
 		
 		System.out.println(pedido.getSituacao());
 
@@ -16,8 +19,8 @@ public class TestaSituacao {
 		System.out.println(pedido.getSituacao());
 
 		pedido.entregar();
+		System.out.println(pedido.getEndereco());
 		System.out.println(pedido.getSituacao());
-		pedido.abrirChamado();
 		
 		//pedido.reabrir();
 		

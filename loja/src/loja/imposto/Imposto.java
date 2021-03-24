@@ -2,10 +2,17 @@ package loja.imposto;
 
 import java.math.BigDecimal;
 
-import loja.Pedido;
+import loja.PedidoInterface;
 
-public interface Imposto {
+public abstract class Imposto {
+	
+	protected Imposto outroImposto;
 
-	public BigDecimal calcular(Pedido pedido);
+	public Imposto(Imposto outroImposto) {
+		super();
+		this.outroImposto = outroImposto;
+	}
+
+	public abstract BigDecimal calcular(PedidoInterface pedido);
 	
 }

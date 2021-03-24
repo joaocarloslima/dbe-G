@@ -1,24 +1,24 @@
 package loja.situacao;
 
-import loja.Pedido;
+import loja.PedidoInterface;
 
 public abstract class Situacao{
 	
-	public abstract void abrirChamado(Pedido pedido);
+	public abstract void abrirChamado(PedidoInterface pedido);
 	
-	public void pagar(Pedido pedido) {
+	public void pagar(PedidoInterface pedido) {
 		throw new StateException("não pode transitar para pago");
 	}
 	
-	public void entregar(Pedido pedido) {
+	public void entregar(PedidoInterface pedido) {
 		throw new StateException("não pode transitar para entregue");
 	}
 	
-	public void cancelar(Pedido pedido) {
+	public void cancelar(PedidoInterface pedido) {
 		throw new StateException("não pode transitar para cancelado");
 	}
 	
-	public void reabrir(Pedido pedido) {
+	public void reabrir(PedidoInterface pedido) {
 		throw new StateException("não pode transitar para aberto");
 	}
 	

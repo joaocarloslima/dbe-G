@@ -2,7 +2,7 @@ package loja.imposto;
 
 import java.math.BigDecimal;
 
-import loja.Pedido;
+import loja.PedidoInterface;
 
 public class CalculadoraDeImposto {
 	
@@ -16,7 +16,7 @@ public class CalculadoraDeImposto {
 		this.imposto = imposto;
 	}
 
-	public BigDecimal calcular(Pedido pedido) {
+	public BigDecimal calcular(PedidoInterface pedido) {
 		return imposto.calcular(pedido);
 	}
 	
